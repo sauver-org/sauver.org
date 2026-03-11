@@ -417,15 +417,27 @@ const App = () => {
       </section>
 
       {/* Section 6: Final CTA */}
-      <footer className="relative py-48 bg-black overflow-hidden px-8 md:px-24">
+      <footer className="relative py-64 bg-black overflow-hidden px-8 md:px-24">
+        {/* Background Image with Parallax-like feel */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/Section6_v7.avif" 
+            alt="Final Shield Background" 
+            className="w-full h-full object-cover opacity-20 grayscale brightness-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal to-transparent h-32" />
+        </div>
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
             className="mb-16 inline-block"
           >
-            <div className="relative">
-              <Shield className="w-32 h-32 text-white/5 hover:text-white transition-all duration-1000 cursor-none" />
+            <div className="relative group cursor-none">
+              <Shield className="w-32 h-32 text-white/5 group-hover:text-gold-500/20 transition-all duration-1000" />
               <motion.div 
                 animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }}
                 transition={{ repeat: Infinity, duration: 4 }}
@@ -435,29 +447,37 @@ const App = () => {
             </div>
           </motion.div>
 
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter mb-16 leading-[0.85] uppercase italic">
-            Claim Your <span className="text-amber-400">Silence</span>.
+          <h2 className="text-5xl md:text-9xl font-black tracking-tighter mb-16 leading-[0.85] uppercase italic">
+            Claim Your <br /><span className="text-amber-400">Silence</span>.
           </h2>
           
-          <div className="flex flex-col items-center gap-12">
-            <button className="px-16 py-8 bg-white text-black font-black uppercase tracking-[0.3em] hover:bg-gold-500 hover:scale-105 transition-all text-xl shadow-[0_0_50px_rgba(255,255,255,0.1)]">
-              Pick up the Shield
+          <div className="flex flex-col items-center gap-16">
+            <button className="group relative px-20 py-10 bg-white text-black font-black uppercase tracking-[0.4em] hover:scale-105 transition-all text-2xl overflow-hidden">
+              <span className="relative z-10">Pick up the Shield</span>
+              <div className="absolute inset-0 bg-gold-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </button>
             
-            <div className="flex gap-12 text-xs font-black uppercase tracking-widest text-gray-500">
-              <a href="https://github.com/mszczodrak/sauver" className="hover:text-cyan-400 transition-colors">GitHub Repository</a>
-              <a href="#" className="hover:text-cyan-400 transition-colors">Vanguard Documentation</a>
-              <a href="#" className="hover:text-white transition-colors">Privacy Shield</a>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full pt-24 border-t border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">
+              <a href="https://github.com/mszczodrak/sauver" className="hover:text-cyan-400 transition-colors flex items-center justify-center gap-3">
+                <Github className="w-4 h-4" /> GitHub Repository
+              </a>
+              <a href="#" className="hover:text-cyan-400 transition-colors flex items-center justify-center gap-3">
+                <Cpu className="w-4 h-4" /> Vanguard Documentation
+              </a>
+              <a href="#" className="hover:text-white transition-colors flex items-center justify-center gap-3">
+                <Shield className="w-4 h-4" /> Privacy Shield
+              </a>
             </div>
             
-            <div className="mt-12 text-center">
-              <div className="text-[10px] font-mono text-gray-700 uppercase tracking-[1em] mb-4">RefractSystems // Sovereign Intelligence Unit</div>
-              <p className="text-gray-700 text-[10px] uppercase tracking-widest">© 2026 Sauver Vanguard Protocol. All Rights Reserved.</p>
+            <div className="mt-12 text-center opacity-40">
+              <div className="text-[8px] font-mono text-gray-500 uppercase tracking-[1.5em] mb-6">RefractSystems // Sovereign Intelligence Unit</div>
+              <p className="text-[8px] uppercase tracking-widest">© 2026 Sauver Vanguard Protocol. Reclaim Your Sovereignty.</p>
             </div>
           </div>
         </div>
         
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200%] h-1/2 bg-[radial-gradient(ellipse_at_center,_rgba(255,215,0,0.05)_0%,_transparent_70%)] pointer-events-none" />
+        {/* Subtle light pulse from the bottom */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-1/2 bg-[radial-gradient(ellipse_at_center,_rgba(255,215,0,0.03)_0%,_transparent_70%)] pointer-events-none" />
       </footer>
     </div>
   );

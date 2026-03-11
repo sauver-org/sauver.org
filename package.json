@@ -2,11 +2,11 @@
   "name": "sauver.org",
   "version": "1.0.0",
   "description": "Website for sauver project.",
-  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "start": "vite preview --port 8080 --host",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "repository": {

@@ -27,53 +27,81 @@ const App = () => {
       </nav>
 
       {/* Section 1: Hero */}
-      <section ref={targetRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        <motion.div style={{ y: backgroundY }} className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,255,255,0.05)_0%,_transparent_70%)]" />
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
-          {/* Abstract Hero Graphic Placeholder */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-[150%] h-[150%] bg-[#050505] rotate-12 opacity-50 blur-3xl rounded-[100px]" />
-          </div>
+      <section ref={targetRef} className="relative h-screen flex items-center justify-start overflow-hidden px-6 md:px-20">
+        <motion.div 
+          style={{ y: backgroundY }} 
+          className="absolute inset-0 z-0"
+        >
+          <div className="absolute inset-0 bg-black/40 z-10" />
+          <img 
+            src="/Section1_hero_v7.avif" 
+            alt="Cinematic Hero" 
+            className="w-full h-[120%] object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-20" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,_rgba(0,255,255,0.15)_0%,_transparent_50%)] z-20" />
         </motion.div>
 
-        <motion.div style={{ y: textY }} className="relative z-10 text-center px-4 max-w-5xl">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+        <motion.div 
+          style={{ y: textY }} 
+          className="relative z-30 text-left max-w-4xl"
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-6xl md:text-8xl font-black tracking-tighter leading-none mb-8"
+            className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold uppercase tracking-[0.3em]"
           >
-            YOUR ATTENTION IS THE PRIZE.<br />
-            YOUR INBOX IS THE BATTLEFIELD.<br />
-            <span className="text-cyan-400">SAUVER IS YOUR SHIELD.</span>
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            Vanguard Protocol Active
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8"
+          >
+            YOUR ATTENTION IS THE <span className="text-amber-400">PRIZE</span>.<br />
+            YOUR INBOX IS THE <span className="text-crimson-500">BATTLEFIELD</span>.<br />
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">SAUVER IS YOUR SHIELD.</span>
           </motion.h1>
+          
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            className="text-lg md:text-2xl text-gray-300 max-w-2xl mb-12 leading-relaxed font-light"
           >
-            They want your data. They steal your time. Stop being the target. Join the movement to reclaim your digital sovereignty.
+            They want your data. They steal your time. Stop being the target. <br className="hidden md:block" />
+            Join the movement to reclaim your <span className="text-white font-medium">digital sovereignty</span>.
           </motion.p>
+          
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="flex flex-col md:flex-row gap-4 justify-center items-center"
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+            className="flex flex-col md:flex-row gap-6 items-start md:items-center"
           >
-            <button className="group relative px-8 py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest overflow-hidden transition-all">
+            <button className="group relative px-10 py-5 bg-white text-black font-black uppercase tracking-[0.2em] overflow-hidden transition-all hover:bg-cyan-400 hover:scale-105 active:scale-95">
               <span className="relative z-10">Pick up the Shield</span>
-              <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-cyan-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
-            <div className="bg-[#1a1a1a] p-1 pl-4 rounded flex items-center gap-4 border border-white/10 group cursor-pointer hover:border-cyan-500/50 transition-colors">
-              <code className="text-sm font-mono text-gray-300">gemini extensions install...</code>
-              <button className="p-3 bg-black/50 hover:bg-black transition-colors">
-                <Terminal className="w-4 h-4 text-cyan-400" />
-              </button>
+            
+            <div className="flex items-center gap-4 group cursor-pointer">
+              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-amber-400 transition-colors">
+                <Terminal className="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors" />
+              </div>
+              <div className="text-left">
+                <div className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">One-line Setup</div>
+                <code className="text-sm font-mono text-cyan-400/80 group-hover:text-cyan-400 transition-colors">gemini extensions install...</code>
+              </div>
             </div>
           </motion.div>
         </motion.div>
+
+        {/* Asymmetrical Detail Element */}
+        <div className="absolute right-0 bottom-0 w-1/3 h-1/2 bg-gradient-to-tl from-cyan-500/5 to-transparent pointer-events-none" />
       </section>
 
       {/* Section 2: The Enemy */}

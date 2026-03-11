@@ -215,7 +215,7 @@ const App = () => {
               className="relative aspect-[4/5] md:aspect-square rounded-2xl overflow-hidden border border-cyan-500/20 shadow-2xl shadow-cyan-500/10"
             >
               <img 
-                src="/Section3_v7.avif" 
+                src="/Section3_v1.avif" 
                 alt="Automated Shield Vanguard" 
                 className="w-full h-full object-cover"
               />

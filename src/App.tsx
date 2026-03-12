@@ -405,7 +405,15 @@ const App = () => {
 
       {/* The Collective Section */}
       <section id="collective" className="relative py-24 md:py-48 bg-charcoal overflow-hidden px-6">
-        <div className="container mx-auto max-w-7xl">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/Section6_v1.avif"
+            alt="Collective Background"
+            className="w-full h-full object-cover opacity-10 grayscale brightness-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-transparent to-charcoal" />
+        </div>
+        <div className="container mx-auto max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -92,6 +92,40 @@ const steps = [
   { num: '05', title: 'Inbox Triage', desc: 'Categorizes, labels, and archives emails by content and risk level, keeping your focus on what matters.' },
 ];
 
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
+
+  return (
+    <button
+      className={`copy-btn ${copied ? 'copied' : ''}`}
+      onClick={handleCopy}
+      aria-label="Copy to clipboard"
+      title="Copy to clipboard"
+    >
+      {copied ? (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -354,8 +388,11 @@ export default function Home() {
             <div className="install-step reveal" ref={addToRefs}>
               <h3><span className="step-n">1</span>One-Command Install</h3>
               <p>Run the automated installer to set up your local environment. Requires Node.js v18+.</p>
-              <div className="code-mockup">
-                <span className="token-key">curl</span> -fsSL https://raw.githubusercontent.com/mszczodrak/sauver/main/scripts/install.sh | <span className="token-key">bash</span>
+              <div className="code-mockup with-copy">
+                <div className="code-content">
+                  <span className="token-key">curl</span> -fsSL https://raw.githubusercontent.com/mszczodrak/sauver/main/scripts/install.sh | <span className="token-key">bash</span>
+                </div>
+                <CopyButton text="curl -fsSL https://raw.githubusercontent.com/mszczodrak/sauver/main/scripts/install.sh | bash" />
               </div>
             </div>
 

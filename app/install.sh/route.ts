@@ -4,7 +4,7 @@ export async function GET() {
   const GITHUB_SCRIPT_URL = 'https://raw.githubusercontent.com/mszczodrak/sauver/main/scripts/install.sh';
   
   try {
-    const response = await fetch(GITHUB_SCRIPT_URL);
+    const response = await fetch(GITHUB_SCRIPT_URL, { cache: 'no-store' });
     if (!response.ok) {
       return new NextResponse('Error fetching install script', { status: 500 });
     }
@@ -14,7 +14,7 @@ export async function GET() {
     return new NextResponse(content, {
       headers: {
         'Content-Type': 'text/x-shellscript',
-        'Cache-Control': 's-maxage=3600, stale-while-revalidate',
+        'Cache-Control': 'no-store',
       },
     });
   } catch (err) {

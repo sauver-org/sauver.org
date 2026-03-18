@@ -228,9 +228,9 @@ export default function Home() {
               <span>ATTENTION.</span>
             </h1>
             <p className="reveal" style={{ transitionDelay: '0.4s' }} ref={addToRefs}>
-              Sauver doesn&apos;t just filter spam — it <strong>strikes back</strong>. A Gemini CLI
-              Extension that strips tracking pixels, exposes AI-generated slop, and deploys
-              expert-level traps to waste spammers&apos; time.
+              Sauver doesn&apos;t just filter spam — it <strong>strikes back</strong>. A cyber-defense
+              layer for Gmail that runs inside Claude Code and Gemini CLI. Strips tracking pixels,
+              exposes AI-generated slop, and deploys expert-level traps to waste spammers&apos; time.
             </p>
             <div className="hero-btns reveal" style={{ transitionDelay: '0.55s' }} ref={addToRefs}>
               <Link href="#installation" className="btn btn-cta">Get Started &rarr;</Link>
@@ -381,7 +381,7 @@ export default function Home() {
         <section id="installation" className="section-container">
           <div className="section-header reveal" ref={addToRefs}>
             <div className="section-label mono">INSTALLATION</div>
-            <h2>THREE MINUTE <span>SETUP</span></h2>
+            <h2>TWO MINUTE <span>SETUP</span></h2>
           </div>
 
           <div className="installation-content">
@@ -398,15 +398,14 @@ export default function Home() {
 
             <div className="install-step reveal" ref={addToRefs}>
               <h3><span className="step-n">2</span>Deploy the Backend</h3>
-              <p>Connect your Gmail without complex OAuth or API keys using Google Apps Script:</p>
+              <p>The installer automates the full backend setup via <code>clasp</code> — no manual steps needed:</p>
               <ul className="prereq-list">
-                <li>Copy <code>apps-script/Code.gs</code> to a new <strong>Google Apps Script</strong> project.</li>
-                <li>Click <strong>Deploy &gt; New Deployment</strong> and choose &quot;Web App&quot;.</li>
-                <li>Set access to &quot;Anyone&quot; and authorize it with your Google account.</li>
-                <li>Provide the Deployment URL to the installer when prompted.</li>
+                <li><strong>Enable Apps Script API</strong> — a one-time toggle in your Google account settings (the installer will prompt you with the link).</li>
+                <li><strong>Authenticate</strong> — the installer opens a browser to securely log in with your Google account.</li>
+                <li><strong>Auto-Deploy</strong> — the installer creates, configures, and deploys your Gmail backend automatically.</li>
               </ul>
               <div className="info-box">
-                <p><strong>Security:</strong> Your backend is protected by a unique 64-character secret hex key generated during installation and stored at <code>~/.sauver/config.json</code>.</p>
+                <p><strong>Security:</strong> Your backend is protected by a unique 64-character secret hex key generated locally and stored at <code>~/.sauver/config.json</code>. It never leaves your machine except in HTTPS POSTs to your own Apps Script.</p>
               </div>
             </div>
 
@@ -417,16 +416,16 @@ export default function Home() {
               <div className="client-grid">
                 <div className="client-box">
                   <h4>Gemini CLI</h4>
-                  <p>Install the extension directly:</p>
+                  <p>The installer automatically configures Gemini CLI and registers the MCP server. Use slash commands or plain English:</p>
                   <div className="code-mockup compact">
-                    <span className="token-key">gemini extensions install</span> https://github.com/mszczodrak/sauver
+                    <span className="token-key">/sauver</span>
                   </div>
                 </div>
                 <div className="client-box">
                   <h4>Claude Code</h4>
-                  <p>The installer automatically registers the MCP server in your <code>~/.claude/settings.json</code>. Just start Claude:</p>
+                  <p>The installer automatically registers the MCP server in your <code>~/.claude/settings.json</code>. Just start Claude and use slash commands:</p>
                   <div className="code-mockup compact">
-                    <span className="token-key">claude</span>
+                    <span className="token-key">/sauver</span>
                   </div>
                 </div>
               </div>
@@ -434,7 +433,7 @@ export default function Home() {
 
             <div className="install-step reveal" ref={addToRefs}>
               <h3><span className="step-n">4</span>Configuration</h3>
-              <p>Manage your preferences (YOLO mode, labels, etc.) directly in the <code>GEMINI.md</code> file within the repository or via the Gemini CLI:</p>
+              <p>Settings live in <code>~/.sauver/config.json</code> under the <code>preferences</code> key. Edit the file directly, or just ask Claude or Gemini (e.g. &quot;turn on yolo mode&quot;):</p>
               <div className="config-table">
                 <div className="config-row config-row-header">
                   <span>Option</span><span>Description</span><span>Default</span>
@@ -456,12 +455,16 @@ export default function Home() {
             <div className="install-step reveal" ref={addToRefs}>
               <h3><span className="step-n">5</span>Use It</h3>
               <div className="code-mockup">
-                <span className="token-comment"># Triage everything unread</span><br />
-                <span className="token-key">/sauver</span> <span className="token-comment">(Claude Code)</span><br />
-                <span className="token-val">&quot;Use the sauver-inbox-assistant to triage my last 10 unread emails&quot;</span> <span className="token-comment">(Gemini CLI)</span><br /><br />
-                <span className="token-comment"># Target a specific email</span><br />
-                <span className="token-key">/slop-detector</span> <span className="token-val">&quot;Subject of the email&quot;</span><br />
-                <span className="token-key">/tracker-shield</span>
+                <span className="token-comment"># Full triage — strips trackers, classifies intent, drafts counter-measures</span><br />
+                <span className="token-key">/sauver</span><br /><br />
+                <span className="token-comment"># Strip tracking pixels from a specific email</span><br />
+                <span className="token-key">/tracker-shield</span><br /><br />
+                <span className="token-comment"># Draft an Expert-Domain Trap for recruiter/sales slop</span><br />
+                <span className="token-key">/slop-detector</span><br /><br />
+                <span className="token-comment"># Due Diligence Loop for unsolicited investors</span><br />
+                <span className="token-key">/investor-trap</span><br /><br />
+                <span className="token-comment"># Time-Sink Trap for generic spam</span><br />
+                <span className="token-key">/bouncer-reply</span>
               </div>
             </div>
           </div>

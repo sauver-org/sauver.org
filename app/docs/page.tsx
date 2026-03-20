@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -44,6 +45,8 @@ const CONFIG_OPTIONS = [
   { key: 'treat_job_offers_as_slop',            default: 'true',    desc: 'Trigger Expert-Domain Trap for recruiters' },
   { key: 'treat_unsolicited_investors_as_slop', default: 'true',    desc: 'Trigger Due Diligence Loop for investors' },
   { key: 'sauver_label',                        default: '"Sauver"',desc: 'Gmail label applied when archiving' },
+  { key: 'engage_bots',                         default: 'false',   desc: 'Keep engaging threads flagged as bot-like; if false, silently archive them' },
+  { key: 'bot_reply_threshold_seconds',         default: '120',     desc: 'Seconds between replies below which a sender is considered bot-like' },
 ];
 
 const FAQ_ITEMS = [
@@ -239,6 +242,8 @@ export default function Docs() {
                 { icon: '⟹', title: 'Expert-Domain Trap', desc: 'Fires hyper-specific technical questions at recruiter bots to shift the cognitive load back to the sender.' },
                 { icon: '📋', title: 'Due Diligence Loop', desc: 'Buries unsolicited investors in bureaucratic document requests and compliance questions.' },
                 { icon: '🚫', title: 'Bouncer Reply', desc: 'Engages generic spammers with absurd, impossible requirements to drain their time and resources.' },
+                { icon: '📄', title: 'NDA Trap', desc: 'When a sender repeats the same pitch 3+ times, Sauver sends them a Nondisclosure Agreement to sign before any further communication.' },
+                { icon: '🤖', title: 'Bot Detection', desc: 'Detects near-instant replies across consecutive exchanges and silently archives bot-driven threads (configurable threshold).' },
               ].map((f, i) => (
                 <div key={i} className="doc-feature-card">
                   <div className="doc-feature-icon">{f.icon}</div>
@@ -392,6 +397,16 @@ export default function Docs() {
             <p className="doc-p reveal" ref={addToRefs}>
               Sauver has three layers. The defense logic — tracker detection, slop classification, trap generation — runs entirely inside the AI model. The MCP server and Apps Script are pure data pipes.
             </p>
+
+            <div className="reveal" ref={addToRefs} style={{ marginBottom: '2rem' }}>
+              <Image
+                src="/architecture_black.jpg"
+                alt="Sauver architecture overview"
+                width={900}
+                height={600}
+                style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+              />
+            </div>
 
             <div className="doc-arch-diagram reveal" ref={addToRefs}>
               <div className="doc-arch-layer doc-arch-l1">

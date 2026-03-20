@@ -92,6 +92,8 @@ const steps = [
   { num: '03', title: 'Expert-Domain Traps', desc: 'Fires hyper-specific, technically demanding questions at recruiters to shift the cognitive load back to the sender.' },
   { num: '04', title: 'Bouncer Replies', desc: 'Engages generic spammers with absurd, bureaucratic, or confusing automated replies to waste their resources.' },
   { num: '05', title: 'Inbox Triage', desc: 'Categorizes, labels, and archives emails by content and risk level, keeping your focus on what matters.' },
+  { num: '06', title: 'NDA Trap', desc: 'When a sender repeats the same pitch 3 or more times, Sauver sends them an NDA to sign before any further communication.' },
+  { num: '07', title: 'Bot Detection', desc: 'Detects near-instant replies across consecutive exchanges, silently archiving bot-driven threads.' },
 ];
 
 function CopyButton({ text }: { text: string }) {
@@ -286,7 +288,7 @@ export default function Home() {
             <div>
               <div className="section-header section-header-left reveal" ref={addToRefs}>
                 <div className="section-label mono">HOW IT WORKS</div>
-                <h2>FIVE LAYERS OF <span>DEFENSE</span></h2>
+                <h2>SEVEN LAYERS OF <span>DEFENSE</span></h2>
               </div>
               <div className="steps-timeline">
                 {steps.map((step, i) => (
@@ -381,61 +383,37 @@ export default function Home() {
 
             <div className="install-step reveal" ref={addToRefs}>
               <h3><span className="step-n">2</span>Deploy the Backend</h3>
-              <p>The installer automates the full backend setup via <code>clasp</code> — no manual steps needed:</p>
-              <ul className="prereq-list">
-                <li><strong>Enable Apps Script API</strong> — a one-time toggle in your Google account settings (the installer will prompt you with the link).</li>
-                <li><strong>Authenticate</strong> — the installer opens a browser to securely log in with your Google account.</li>
-                <li><strong>Auto-Deploy</strong> — the installer creates, configures, and deploys your Gmail backend automatically.</li>
-              </ul>
-              <div className="info-box">
-                <p><strong>Security:</strong> Your backend is protected by a unique 64-character secret hex key generated locally and stored at <code>~/.sauver/config.json</code>. It never leaves your machine except in HTTPS POSTs to your own Apps Script.</p>
-              </div>
+              <p>The installer automates the full backend setup via <code>clasp</code> — it enables the Apps Script API, authenticates, and deploys the Gmail backend. No OAuth setup or API keys required.</p>
             </div>
 
             <div className="install-step reveal" ref={addToRefs}>
               <h3><span className="step-n">3</span>Connect Your AI Client</h3>
-              <p>Sauver now runs a unified MCP server at <code>~/.sauver/mcp-server/</code> that works with both Gemini and Claude.</p>
-              
+              <p>Sauver runs a unified MCP server that works with both Gemini and Claude.</p>
+
               <div className="client-grid">
                 <div className="client-box">
                   <h4>Gemini CLI</h4>
-                  <p>The installer registers the MCP server and populates global slash command shims in <code>~/.agent/workflows/</code>. Commands work from any directory:</p>
+                  <p>The installer registers the MCP server and populates global slash command shims. Commands work from any directory:</p>
                   <div className="code-mockup compact">
                     <span className="token-key">/sauver</span>
                   </div>
                 </div>
                 <div className="client-box">
                   <h4>Claude Code</h4>
-                  <p>The installer registers the MCP server in <code>~/.claude/settings.json</code> and writes global slash commands to <code>~/.claude/commands/</code>. Available in every session, from any directory:</p>
+                  <p>The installer registers the MCP server and writes global slash commands. Available in every session, from any directory:</p>
                   <div className="code-mockup compact">
                     <span className="token-key">/sauver</span>
                   </div>
                 </div>
               </div>
               <div className="info-box">
-                <p><strong>Auto-updates:</strong> The MCP server silently checks for skill updates on GitHub once a day at startup. A one-line message appears when an update is applied — just restart your AI client to pick it up.</p>
+                <p><strong>Auto-updates:</strong> The MCP server silently checks for skill updates on GitHub once a day at startup — just restart your AI client to pick up any update.</p>
               </div>
             </div>
 
             <div className="install-step reveal" ref={addToRefs}>
               <h3><span className="step-n">4</span>Configuration</h3>
-              <p>Settings live in <code>~/.sauver/config.json</code> under the <code>preferences</code> key. Edit the file directly, or just ask Claude or Gemini (e.g. &quot;turn on yolo mode&quot;):</p>
-              <div className="config-table">
-                <div className="config-row config-row-header">
-                  <span>Option</span><span>Description</span><span>Default</span>
-                </div>
-                {[
-                  { key: 'auto_draft',                         desc: 'Auto-create draft replies to detected slop',            def: 'true' },
-                  { key: 'yolo_mode',                          desc: 'Auto-send replies — bypasses draft review',             def: 'false' },
-                  { key: 'treat_job_offers_as_slop',           desc: 'Treat recruiter outreach as slop (Expert-Domain Trap)', def: 'true' },
-                  { key: 'treat_unsolicited_investors_as_slop',desc: 'Treat unsolicited investor outreach as slop',           def: 'true' },
-                  { key: 'sauver_label',                       desc: 'Gmail label applied when an email is archived',        def: '"Sauver"' },
-                ].map(row => (
-                  <div key={row.key} className="config-row">
-                    <code>{row.key}</code><span>{row.desc}</span><code>{row.def}</code>
-                  </div>
-                ))}
-              </div>
+              <p>Configure via <code>~/.sauver/config.json</code> or ask Claude/Gemini directly (e.g. &quot;turn on yolo mode&quot;). See the <Link href="/docs#configuration">docs</Link> for all options.</p>
             </div>
 
             <div className="install-step reveal" ref={addToRefs}>

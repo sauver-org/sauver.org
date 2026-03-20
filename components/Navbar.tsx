@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar({ activeSection }: { activeSection?: string }) {
   const [scrolled, setScrolled] = useState(false);
@@ -21,7 +22,7 @@ export default function Navbar({ activeSection }: { activeSection?: string }) {
     <nav className={scrolled ? 'scrolled' : ''}>
       <div className="nav-container">
         <Link href="/" className="logo" onClick={closeMenu}>
-          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.47 4.34-2.98 8.19-7 9.49V12H5V6.3l7-3.11v8.8z" /></svg>
+          <Image src="/sauver-shield-simple-color.svg" alt="Sauver shield" width={24} height={24} />
           SAUVER
         </Link>
 
@@ -33,9 +34,9 @@ export default function Navbar({ activeSection }: { activeSection?: string }) {
           <Link href="/#installation" className="btn btn-cta" onClick={closeMenu}>Install Now</Link>
         </div>
 
-        <button 
-          className={`hamburger ${mobileMenuOpen ? 'open' : ''}`} 
-          aria-label="Toggle menu" 
+        <button
+          className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}
+          aria-label="Toggle menu"
           onClick={() => setMobileMenuOpen(o => !o)}
         >
           <span /><span /><span />

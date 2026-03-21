@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import AnalyticsProvider from "@/components/AnalyticsProvider";
+import FirebaseAnalyticsInit from "@/components/FirebaseAnalyticsInit";
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -29,10 +29,9 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <AnalyticsProvider>
-          <div className="noise-overlay"></div>
-          {children}
-        </AnalyticsProvider>
+        <FirebaseAnalyticsInit />
+        <div className="noise-overlay"></div>
+        {children}
       </body>
     </html>
   )

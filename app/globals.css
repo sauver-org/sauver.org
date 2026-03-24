@@ -851,7 +851,7 @@ footer {
   max-width: var(--container-max);
   margin: 0 auto 56px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   gap: 60px;
 }
 

@@ -19,18 +19,24 @@ export default function Footer() {
             <li><Link href="/#who-it-is-for">Who it's for</Link></li>
             <li><Link href="/#how-it-works">How it works</Link></li>
             <li><Link href="/#installation">Installation</Link></li>
-            <li><Link href="/docs">Documentation</Link></li>
           </ul>
         </div>
         <div className="footer-col">
           <h4>Resources</h4>
           <ul>
             <li><Link href="https://github.com/sauver-org/sauver">GitHub</Link></li>
+            <li><Link href="/docs">Documentation</Link></li>
+            <li><Link href="/llms.txt">llms.txt</Link></li>
+          </ul>
+        </div>
+        <div className="footer-col">
+          <h4>Social</h4>
+          <ul>
             <li><Link href="https://www.youtube.com/@SauverOrg">YouTube</Link></li>
             <li><Link href="https://bsky.app/profile/sauverorg.bsky.social">Bluesky</Link></li>
             <li><Link href="https://www.reddit.com/user/sauverorg/">Reddit</Link></li>
             <li><Link href="https://www.tiktok.com/@sauverorg">TikTok</Link></li>
-            <li><Link href="/llms.txt">llms.txt</Link></li>
+            <li><Link href="https://substack.com/@sauver">Substack</Link></li>
           </ul>
         </div>
         <div className="footer-col">

@@ -206,19 +206,17 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-eyebrow mono reveal" style={{ transitionDelay: '0.1s' }} ref={addToRefs}>
               <div className="dot-blink" />
-              [ AUTONOMOUS INBOX DEFENSE ACTIVE ]
+              [ THE RESISTANCE IS ACTIVE ]
             </div>
             <h1 className="reveal" style={{ transitionDelay: '0.25s' }} ref={addToRefs}>
-              RECLAIM YOUR<br />
-              <span>ATTENTION.</span>
+              THEY WEAPONIZED AI.<br />
+              <span>WE WEAPONIZED IT BACK.</span>
             </h1>
             <p className="reveal" style={{ transitionDelay: '0.4s' }} ref={addToRefs}>
-              Sauver doesn&apos;t just filter spam — it <strong>strikes back</strong>. A cyber-defense
-              layer for Gmail that runs inside Claude Code and Gemini CLI. Strips tracking pixels,
-              exposes AI-generated slop, and deploys expert-level traps to waste spammers&apos; time.
+              The slop machine sends billions of AI-generated emails every day. Each one is a system deciding your time is worth nothing. Sauver fights back — stripping trackers, exposing slop, and deploying traps that make senders pay for the intrusion. Free. Local-first. MIT licensed. <strong>Built for The Resistance.</strong>
             </p>
             <div className="hero-btns reveal" style={{ transitionDelay: '0.55s' }} ref={addToRefs}>
-              <Link href="#installation" className="btn btn-cta">Get Started &rarr;</Link>
+              <Link href="#installation" className="btn btn-cta">Join The Resistance &rarr;</Link>
               <Link href="#how-it-works" className="btn btn-outline">See how it works</Link>
             </div>
             <p className="hero-trust mono reveal" style={{ transitionDelay: '0.7s' }} ref={addToRefs}>
@@ -233,22 +231,57 @@ export default function Home() {
         {/* ── The Problem (Section2_v3) ───────────────────── */}
         <section className="problem-strip">
           <div className="problem-content">
-            <p className="section-label mono reveal" ref={addToRefs}>THE REALITY</p>
+            <p className="section-label mono reveal" ref={addToRefs}>THE MANIFESTO</p>
             <h2 className="reveal" ref={addToRefs}>
-              YOUR INBOX IS A<br /><span>WARZONE.</span>
+              YOUR INBOX IS A<br /><span>SURVEILLANCE STATE.</span>
             </h2>
             <p className="reveal" ref={addToRefs}>
-              Every day, automated systems harvest your attention, track your opens, and blast identical
-              pitches at thousands of targets — including you. It&apos;s not email. It&apos;s surveillance infrastructure.
+              Billions of AI-generated emails. Each one a machine deciding your time is worth $0.003 per blast. They track your opens, harvest your behavior, and send the same template to ten thousand strangers — including you. This isn&apos;t a spam problem. It&apos;s a declaration of war on human attention.
             </p>
+            <p className="reveal problem-manifesto-close" ref={addToRefs}>
+              Most people just accept it. <strong>We don&apos;t.</strong>
+            </p>
+          </div>
+        </section>
+
+        {/* ── Founder Story ────────────────────────────── */}
+        <section className="founder-section">
+          <div className="founder-inner">
+            <div className="section-label mono reveal" ref={addToRefs}>WHY WE BUILT THIS</div>
+            <blockquote className="founder-quote reveal" ref={addToRefs}>
+              &ldquo;I got the same AI-generated recruiter email eleven times in a month. Different names. Same template hash. Same tracking pixel reporting back every time I opened it. I&apos;m a developer — so I stopped complaining and built a weapon. Then I gave it away. Because the fight belongs to everyone.&rdquo;
+            </blockquote>
+            <p className="founder-attribution reveal" ref={addToRefs}>— Marcin, builder of Sauver</p>
+          </div>
+        </section>
+
+        {/* ── Manifesto ────────────────────────────────── */}
+        <section className="section-container manifesto-section">
+          <div className="section-header reveal" ref={addToRefs}>
+            <div className="section-label mono">THE RESISTANCE BELIEVES</div>
+            <h2>WHAT WE <span>STAND FOR</span></h2>
+          </div>
+          <div className="manifesto-grid">
+            {[
+              { n: '01', text: 'Your attention is not a marketing channel.' },
+              { n: '02', text: 'Every AI-generated email is a choice. Someone chose to treat you as a row in a database.' },
+              { n: '03', text: 'Passive filtering is compliance. Fighting back is a statement.' },
+              { n: '04', text: 'The tools that flood your inbox use AI. So should your defense.' },
+              { n: '05', text: 'This is free. The fight belongs to everyone.' },
+            ].map((item) => (
+              <div key={item.n} className="manifesto-item reveal" ref={addToRefs}>
+                <span className="manifesto-n mono">{item.n}</span>
+                <p>{item.text}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* ── Who it is for ──────────────────────────────── */}
         <section id="who-it-is-for" className="section-container">
           <div className="section-header reveal" ref={addToRefs}>
-            <div className="section-label mono">WHO IT&apos;S FOR</div>
-            <h2>BUILT FOR THE <span>RESISTANCE</span></h2>
+            <div className="section-label mono">ARE YOU ONE OF US?</div>
+            <h2>THE RESISTANCE IS <span>PEOPLE LIKE YOU</span></h2>
           </div>
           <div className="grid-features">
             <div className="feature-card reveal" ref={addToRefs}>
@@ -262,8 +295,8 @@ export default function Home() {
               <div className="feature-icon">
                 <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
               </div>
-              <h3>The Resistance</h3>
-              <p>Actively mirror the tactics of automated predators. Waste the time of those who waste yours.</p>
+              <h3>The Fighter</h3>
+              <p>You don&apos;t just want slop filtered. You want the senders to feel it. You believe passive filtering is letting them win.</p>
             </div>
             <div className="feature-card reveal" ref={addToRefs}>
               <div className="feature-icon">

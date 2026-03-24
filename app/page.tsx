@@ -236,38 +236,27 @@ export default function Home() {
               YOUR INBOX IS A<br /><span>SURVEILLANCE STATE.</span>
             </h2>
             <p className="reveal" ref={addToRefs}>
-              Billions of AI-generated emails. Each one a machine deciding your time is worth $0.003 per blast. They track your opens, harvest your behavior, and send the same template to ten thousand strangers — including you. This isn&apos;t a spam problem. It&apos;s a declaration of war on human attention.
+              They promised us AI would unlock human potential. Instead they used it to build a slop-machine that bombards your inbox, intoxicates your feed, and taxes your sanity. They&apos;ve turned your most private tool — your email — into a playground for tracking pixels and automated predators who see your time as their raw material.
             </p>
             <p className="reveal problem-manifesto-close" ref={addToRefs}>
-              Most people just accept it. <strong>We don&apos;t.</strong>
+              It is not your fault. <strong>No human was ever meant to compete with a thousand bots.</strong>
             </p>
-          </div>
-        </section>
-
-        {/* ── Founder Story ────────────────────────────── */}
-        <section className="founder-section">
-          <div className="founder-inner">
-            <div className="section-label mono reveal" ref={addToRefs}>WHY WE BUILT THIS</div>
-            <blockquote className="founder-quote reveal" ref={addToRefs}>
-              &ldquo;I got the same AI-generated recruiter email eleven times in a month. Different names. Same template hash. Same tracking pixel reporting back every time I opened it. I&apos;m a developer — so I stopped complaining and built a weapon. Then I gave it away. Because the fight belongs to everyone.&rdquo;
-            </blockquote>
-            <p className="founder-attribution reveal" ref={addToRefs}>— Marcin, builder of Sauver</p>
           </div>
         </section>
 
         {/* ── Manifesto ────────────────────────────────── */}
         <section className="section-container manifesto-section">
           <div className="section-header reveal" ref={addToRefs}>
-            <div className="section-label mono">THE RESISTANCE BELIEVES</div>
+            <div className="section-label mono">THE MANIFESTO</div>
             <h2>WHAT WE <span>STAND FOR</span></h2>
           </div>
           <div className="manifesto-grid">
             {[
-              { n: '01', text: 'Your attention is not a marketing channel.' },
-              { n: '02', text: 'Every AI-generated email is a choice. Someone chose to treat you as a row in a database.' },
-              { n: '03', text: 'Passive filtering is compliance. Fighting back is a statement.' },
-              { n: '04', text: 'The tools that flood your inbox use AI. So should your defense.' },
-              { n: '05', text: 'This is free. The fight belongs to everyone.' },
+              { n: '01', text: 'Your attention is being harvested. They used AI to build a slop-machine that bombards your inbox and taxes your sanity.' },
+              { n: '02', text: 'No human was ever meant to compete with a thousand bots firing at them simultaneously. The system isn\'t broken — it\'s working exactly as they intended.' },
+              { n: '03', text: 'We confirm what you\'ve always suspected: that "personalized" pitch was written by a machine, and that hidden pixel is watching you.' },
+              { n: '04', text: 'We use AI to stop AI. We mirror their tactics and waste the time of those who dare to waste yours.' },
+              { n: '05', text: 'We are reclaiming the quiet required for deep work, the privacy required for freedom. The rescue has begun.' },
             ].map((item) => (
               <div key={item.n} className="manifesto-item reveal" ref={addToRefs}>
                 <span className="manifesto-n mono">{item.n}</span>
@@ -275,6 +264,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <p className="manifesto-close reveal" ref={addToRefs}>Welcome to the resistance.</p>
         </section>
 
         {/* ── Who it is for ──────────────────────────────── */}

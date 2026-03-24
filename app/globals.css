@@ -395,7 +395,17 @@ nav.scrolled {
 }
 
 /* ── Manifesto Section ───────────────────────── */
-.manifesto-section { padding-bottom: 40px; }
+.manifesto-section { padding-bottom: 60px; }
+
+.manifesto-close {
+  text-align: center;
+  margin-top: 48px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 28px;
+  letter-spacing: 0.12em;
+  color: var(--accent-amber);
+  text-transform: uppercase;
+}
 
 .manifesto-grid {
   display: grid;

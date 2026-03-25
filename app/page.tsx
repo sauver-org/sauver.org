@@ -236,7 +236,7 @@ export default function Home() {
               YOUR INBOX IS A<br /><span>SURVEILLANCE STATE.</span>
             </h2>
             <p className="reveal" ref={addToRefs}>
-              The attention merchants were handed AI and promised us it would save us time. Instead they used it to build a slop-machine that bombards your inbox and taxes your sanity. They&apos;ve turned your most private tool — your email — into surveillance infrastructure for automated predators who see your time as raw material.
+              AI was supposed to make us 10x more productive. Instead, the attention merchants — lead generators, growth hackers, and their armies of automated outreach tools — weaponized it to build a slop-machine that bombards your inbox and taxes your sanity. They&apos;ve turned your most private tool — your email — into surveillance infrastructure for automated predators who see your time as raw material.
             </p>
             <p className="reveal problem-manifesto-close" ref={addToRefs}>
               It is not your fault. <strong>No human was ever meant to compete with a thousand bots.</strong>

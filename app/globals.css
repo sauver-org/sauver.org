@@ -751,6 +751,9 @@ nav.scrolled {
 }
 
 .install-step p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+.install-detail-link { margin-top: 16px; font-size: 14px; color: var(--text-secondary); }
+.install-detail-link a { color: var(--accent); text-decoration: none; }
+.install-detail-link a:hover { text-decoration: underline; }
 
 code {
   background: rgba(255,255,255,0.07);

@@ -8,7 +8,7 @@ Sauver is a set of specialized skills for Gemini CLI and Claude Code that integr
 
 - **Tracker Shielding:** Identifies and strips 1x1 tracking pixels and surveillance beacons from HTML emails before they phone home.
 - **Slop Detection:** Uses AI to classify email intent, distinguishing genuine human outreach from automated "job slop" and mass-marketing templates.
-- **Expert-Domain Traps:** Targets recruiters and sales reps with hyper-specific, technically demanding questions that shift cognitive load back to the sender.
+- **Expert Domain Traps:** Targets recruiters and sales reps with hyper-specific, technically demanding questions that shift cognitive load back to the sender.
 - **Bouncer Replies:** Engages generic spammers with absurd, bureaucratic, or confusing automated replies to waste their time and resources.
 - **Inbox Triage:** Automatically categorizes, labels, and archives emails by content and risk level.
 - **YOLO Mode:** (Gemini CLI only) Optionally sends trap replies automatically instead of saving as drafts.
@@ -19,7 +19,7 @@ Sauver is a set of specialized skills for Gemini CLI and Claude Code that integr
 | :--- | :--- | :--- |
 | `sauver-inbox-assistant` | Triage Orchestrator | End-to-end pipeline management |
 | `tracker-shield` | Surveillance Purifier | Neutralizes tracking pixels and spy-links |
-| `slop-detector` | Intent Classifier | Deploys the Expert-Domain Trap for recruiters |
+| `slop-detector` | Intent Classifier | Deploys the Expert Domain Trap for recruiters |
 | `investor-trap` | VC-Slop Shield | Deploys the Due Diligence Loop for "investors" |
 | `bouncer-reply` | Time-Waster | Generates context-aware, confusing drafts for spammers |
 
@@ -106,7 +106,7 @@ claude   # open Claude Code from inside the repo
 | :--- | :--- |
 | `/sauver` | Full inbox triage — scans unread emails, strips trackers, classifies intent, and drafts a counter-measure for each slop email |
 | `/tracker-shield` | Strips tracking pixels and spy-links from a specific email |
-| `/slop-detector` | Analyzes an email for recruiter/sales slop and drafts an Expert-Domain Trap reply |
+| `/slop-detector` | Analyzes an email for recruiter/sales slop and drafts an Expert Domain Trap reply |
 | `/investor-trap` | Analyzes an email for investor slop and drafts a Due Diligence Loop reply |
 | `/bouncer-reply` | Drafts a Time-Sink Trap reply for a general spam or marketing email |
 

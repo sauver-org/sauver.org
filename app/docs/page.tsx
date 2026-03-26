@@ -576,8 +576,8 @@ export default function Docs() {
               Run the uninstaller to cleanly remove everything Sauver added to your machine:
             </p>
 
-            <CodeBlock copyText="curl -fsSL https://raw.githubusercontent.com/sauver-org/sauver/main/scripts/uninstall.sh | bash">
-              <span className="tok-key">curl</span> -fsSL https://raw.githubusercontent.com/sauver-org/sauver/main/scripts/uninstall.sh | <span className="tok-key">bash</span>
+            <CodeBlock copyText="curl -fsSL https://sauver.org/uninstall.sh | bash">
+              <span className="tok-key">curl</span> -fsSL https://sauver.org/uninstall.sh | <span className="tok-key">bash</span>
             </CodeBlock>
 
             <p className="doc-p reveal" ref={addToRefs} style={{ marginTop: '24px' }}>The uninstaller removes:</p>

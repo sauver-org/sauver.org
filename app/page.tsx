@@ -415,6 +415,72 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Example ─────────────────────────────────── */}
+        <section className="section-container">
+          <div className="section-header reveal" ref={addToRefs}>
+            <div className="section-label mono">SEE IT IN ACTION</div>
+            <h2>WHAT <span>/SAUVER</span> LOOKS LIKE</h2>
+          </div>
+
+          <div className="example-content reveal" ref={addToRefs}>
+            <p className="example-intro">Type <code>/sauver</code> in Claude Code or Gemini CLI. Sauver scans your inbox, strips trackers, classifies each email, and drafts counter-measures — all in one shot.</p>
+
+            <div className="terminal example-terminal">
+              <div className="terminal-header">
+                <div className="terminal-dots"><span /><span /><span /></div>
+                <span className="terminal-title">claude — /sauver</span>
+              </div>
+              <div className="terminal-body terminal-body-static">
+                <div className="t-line t-cmd">{'> /sauver'}</div>
+                <div className="t-line t-sep">&nbsp;</div>
+                <div className="t-line t-info">Scanning 23 unread emails...</div>
+                <div className="t-line t-sep">&nbsp;</div>
+                <div className="t-line t-blocked">{'⊘ TRACKER BLOCKED'}</div>
+                <div className="t-line t-detail">{'  ↳ from: growth@saas-startup.io'}</div>
+                <div className="t-line t-detail">{'  ↳ pixel: px.mailchimp.com stripped'}</div>
+                <div className="t-line t-sep">&nbsp;</div>
+                <div className="t-line t-slop">{'⚡ SLOP DETECTED  [96.7% confidence]'}</div>
+                <div className="t-line t-detail">{'  ↳ from: talent@recruitpro.io'}</div>
+                <div className="t-line t-detail">{'  ↳ "Hi {first_name}, I came across your profile..."'}</div>
+                <div className="t-line t-trap">{'⟹  EXPERT TRAP DRAFTED'}</div>
+                <div className="t-line t-detail">{'  ↳ "Explain the difference between CRDT convergence'}</div>
+                <div className="t-line t-detail">{'     and operational transform in collaborative editors"'}</div>
+                <div className="t-line t-sep">&nbsp;</div>
+                <div className="t-line t-slop">{'⚡ INVESTOR SLOP  [91.2% confidence]'}</div>
+                <div className="t-line t-detail">{'  ↳ from: partner@vc-capital.com'}</div>
+                <div className="t-line t-detail">{'  ↳ "We\'d love to explore synergies..."'}</div>
+                <div className="t-line t-trap">{'⟹  DUE DILIGENCE LOOP DRAFTED'}</div>
+                <div className="t-line t-detail">{'  ↳ "Please share your fund\'s SEC Form ADV Part 2A,'}</div>
+                <div className="t-line t-detail">{'     portfolio MOIC distribution, and LP reference contacts"'}</div>
+                <div className="t-line t-sep">&nbsp;</div>
+                <div className="t-line t-success">{'✓ Done. 4 trackers stripped. 3 traps drafted. 16 clean.'}</div>
+              </div>
+            </div>
+
+            <div className="example-commands reveal" ref={addToRefs}>
+              <p className="example-commands-label mono">YOU CAN ALSO TARGET INDIVIDUAL EMAILS:</p>
+              <div className="code-mockup with-copy">
+                <div className="code-content">
+                  <span className="token-key">/slop-detector</span> <span className="token-val">&quot;We&apos;d love to connect about an exciting opportunity&quot;</span>
+                </div>
+                <CopyButton text='/slop-detector "We&#39;d love to connect about an exciting opportunity"' />
+              </div>
+              <div className="code-mockup with-copy" style={{ marginTop: '12px' }}>
+                <div className="code-content">
+                  <span className="token-key">/bouncer-reply</span>
+                </div>
+                <CopyButton text="/bouncer-reply" />
+              </div>
+              <div className="code-mockup with-copy" style={{ marginTop: '12px' }}>
+                <div className="code-content">
+                  <span className="token-key">/tracker-shield</span>
+                </div>
+                <CopyButton text="/tracker-shield" />
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <Footer />

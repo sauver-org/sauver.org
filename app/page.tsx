@@ -213,7 +213,7 @@ export default function Home() {
               <span>WE WEAPONIZED IT BACK.</span>
             </h1>
             <p className="reveal" style={{ transitionDelay: '0.4s' }} ref={addToRefs}>
-              The slop machine sends billions of AI-generated emails every day. Each one is a system deciding your time is worth nothing. Sauver fights back — stripping trackers, exposing slop, and deploying traps that make senders pay for the intrusion. <strong>Built for The Resistance.</strong>
+              The slop machine sends billions of AI-generated emails every day. Each one is a system deciding your time is worth nothing. Sauver fights back by stripping trackers, exposing slop, and deploying traps that make senders pay for the intrusion. <strong>Built for The Resistance.</strong>
             </p>
             <div className="hero-btns reveal" style={{ transitionDelay: '0.55s' }} ref={addToRefs}>
               <Link href="#installation" className="btn btn-cta">Join The Resistance &rarr;</Link>
@@ -236,7 +236,7 @@ export default function Home() {
               YOUR INBOX IS A<br /><span>SURVEILLANCE STATE.</span>
             </h2>
             <p className="reveal" ref={addToRefs}>
-              AI was supposed to make us 10x more productive. Instead, the attention merchants — lead generators, growth hackers, and their armies of automated outreach tools — weaponized it to build a slop-machine that bombards your inbox and taxes your sanity. They&apos;ve turned your most private tool — your email — into surveillance infrastructure for automated predators who see your time as raw material.
+              AI was supposed to make us 10x more productive. Instead, the attention merchants, including lead generators, growth hackers, and their armies of automated outreach tools, have weaponized it to build a slop-machine that bombards your inbox and taxes your sanity. They&apos;ve turned your most private tool, your email, into surveillance infrastructure for automated predators who see your time as raw material.
             </p>
             <p className="reveal problem-manifesto-close" ref={addToRefs}>
               It is not your fault. <strong>No human was ever meant to compete with a thousand bots.</strong>
@@ -252,10 +252,10 @@ export default function Home() {
           </div>
           <div className="manifesto-grid">
             {[
-              { n: '01', text: 'The attention merchants — lead generators, growth hackers, and their armies of automated tools — were handed AI and used it to build a slop-machine that bombards your inbox and taxes your sanity.' },
+              { n: '01', text: 'The attention merchants, including lead generators, growth hackers, and their armies of automated tools, were handed AI and used it to build a slop-machine that bombards your inbox and taxes your sanity.' },
               { n: '02', text: 'No human was ever meant to compete with a thousand bots firing at them simultaneously. The system isn\'t broken. It\'s working exactly as they intended.' },
               { n: '03', text: 'We confirm what you\'ve always suspected: that "personalized" pitch was written by a machine, and that hidden pixel is watching you. We make your defense active.' },
-              { n: '04', text: 'None of us are fighting alone. Every trap deployed, every pixel stripped, every bouncer reply sent — by any of us — drains their resources. Our collective resistance is a DDoS against the attention economy.' },
+              { n: '04', text: 'None of us are fighting alone. Every trap deployed, every pixel stripped, and every bouncer reply sent by any of us drains their resources. Our collective resistance is a DDoS against the attention economy.' },
               { n: '05', text: 'People like us don\'t accept the default. We fight back. Together we overwhelm them.' },
             ].map((item) => (
               <div key={item.n} className="manifesto-item reveal" ref={addToRefs}>
@@ -328,7 +328,7 @@ export default function Home() {
             <div className="how-it-works-image reveal" style={{ transitionDelay: '0.2s' }} ref={addToRefs}>
               <Image
                 src="/Section6_v5.avif"
-                alt="Sauver shield — inbox defense visualization"
+                alt="Sauver shield for inbox defense visualization"
                 width={500}
                 height={500}
                 style={{ width: '100%', height: 'auto', borderRadius: '50%', opacity: 0.85 }}
@@ -346,13 +346,13 @@ export default function Home() {
             </h2>
             <p className="strike-desc reveal" style={{ transitionDelay: '0.2s' }} ref={addToRefs}>
               When Sauver detects a recruiter mass-blast or sales template, it doesn&apos;t just archive it.
-              It deploys an <strong>Expert-Domain Trap</strong> — a hyper-specific technical challenge no
+              It deploys an <strong>Expert Domain Trap</strong>, a hyper-specific technical challenge no
               automated system can answer. The cognitive load shifts permanently back to the sender.
             </p>
             <div className="strike-features reveal" style={{ transitionDelay: '0.3s' }} ref={addToRefs}>
               <div className="strike-feature">
                 <div className="strike-feature-icon">⟹</div>
-                <h4>Expert-Domain Traps</h4>
+                <h4>Expert Domain Traps</h4>
                 <p>Hyper-specific questions only a real human can answer, customized to the sender&apos;s claimed domain.</p>
               </div>
               <div className="strike-feature">
@@ -406,7 +406,7 @@ export default function Home() {
 
             <div className="install-step reveal" ref={addToRefs}>
               <h3><span className="step-n">2</span>Deploy the Backend</h3>
-              <p>The installer automates the full backend setup via <code>clasp</code> — it enables the Apps Script API, authenticates, and deploys the Gmail backend. No OAuth setup or API keys required.</p>
+              <p>The installer automates the full backend setup via <code>clasp</code>; it enables the Apps Script API, authenticates, and deploys the Gmail backend. No OAuth setup or API keys required.</p>
             </div>
 
             <div className="install-step reveal" ref={addToRefs}>
@@ -430,7 +430,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="info-box">
-                <p><strong>Auto-updates:</strong> The MCP server silently checks for skill updates on GitHub once a day at startup — just restart your AI client to pick up any update.</p>
+                <p><strong>Auto-updates:</strong> The MCP server silently checks for skill updates on GitHub once a day at startup; simply restart your AI client to pick up any update.</p>
               </div>
             </div>
 
@@ -442,7 +442,7 @@ export default function Home() {
             <div className="install-step reveal" ref={addToRefs}>
               <h3><span className="step-n">5</span>Use It</h3>
               <div className="code-mockup">
-                <span className="token-comment"># Full triage — strips trackers, classifies intent, drafts counter-measures</span><br />
+                <span className="token-comment"># Full triage: strips trackers, classifies intent, drafts counter-measures</span><br />
                 <span className="token-key">/sauver</span><br /><br />
                 <span className="token-comment"># Strip tracking pixels from a specific email</span><br />
                 <span className="token-key">/tracker-shield</span><br /><br />

@@ -134,7 +134,6 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState('');
   const [statsStarted, setStatsStarted] = useState(false);
   const [stats, setStats] = useState({ trackers: 0, accuracy: 0, timeSaved: 0, slop: 0 });
-  const [installTab, setInstallTab] = useState<'gemini' | 'claude'>('gemini');
 
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
   const statsRef = useRef<HTMLElement | null>(null);
@@ -389,13 +388,12 @@ export default function Home() {
         <section id="installation" className="section-container">
           <div className="section-header reveal" ref={addToRefs}>
             <div className="section-label mono">INSTALLATION</div>
-            <h2>THREE MINUTE <span>SETUP</span></h2>
+            <h2>ONE COMMAND. <span>THAT&apos;S IT.</span></h2>
           </div>
 
           <div className="installation-content">
             <div className="install-step reveal" ref={addToRefs}>
-              <h3><span className="step-n">1</span>One-Command Install</h3>
-              <p>Run the automated installer to set up your local environment. Requires Node.js v18+.</p>
+              <p>The installer handles everything — backend deployment, AI client configuration, and slash commands. Requires Node.js v18+.</p>
               <div className="code-mockup with-copy">
                 <div className="code-content">
                   <span className="token-key">curl</span> -fsSL https://sauver.org/install.sh | <span className="token-key">bash</span>
@@ -405,56 +403,14 @@ export default function Home() {
             </div>
 
             <div className="install-step reveal" ref={addToRefs}>
-              <h3><span className="step-n">2</span>Deploy the Backend</h3>
-              <p>The installer automates the full backend setup via <code>clasp</code>; it enables the Apps Script API, authenticates, and deploys the Gmail backend. No OAuth setup or API keys required.</p>
-            </div>
-
-            <div className="install-step reveal" ref={addToRefs}>
-              <h3><span className="step-n">3</span>Connect Your AI Client</h3>
-              <p>Sauver runs a unified MCP server that works with both Gemini and Claude.</p>
-
-              <div className="client-grid">
-                <div className="client-box">
-                  <h4>Gemini CLI</h4>
-                  <p>The installer registers the MCP server and populates global slash command shims. Commands work from any directory:</p>
-                  <div className="code-mockup compact">
-                    <span className="token-key">/sauver</span>
-                  </div>
+              <p>Once installed, open Claude Code or Gemini CLI and run:</p>
+              <div className="code-mockup with-copy">
+                <div className="code-content">
+                  <span className="token-key">/sauver</span>
                 </div>
-                <div className="client-box">
-                  <h4>Claude Code</h4>
-                  <p>The installer registers the MCP server and writes global slash commands. Available in every session, from any directory:</p>
-                  <div className="code-mockup compact">
-                    <span className="token-key">/sauver</span>
-                  </div>
-                </div>
+                <CopyButton text="/sauver" />
               </div>
-              <div className="info-box">
-                <p><strong>Auto-updates:</strong> The MCP server silently checks for skill updates on GitHub once a day at startup; simply restart your AI client to pick up any update.</p>
-              </div>
-            </div>
-
-            <div className="install-step reveal" ref={addToRefs}>
-              <h3><span className="step-n">4</span>Configuration</h3>
-              <p>Configure via <code>~/.sauver/config.json</code> or ask Claude/Gemini directly (e.g. &quot;turn on yolo mode&quot;). See the <Link href="/docs#configuration">docs</Link> for all options.</p>
-            </div>
-
-            <div className="install-step reveal" ref={addToRefs}>
-              <h3><span className="step-n">5</span>Use It</h3>
-              <div className="code-mockup">
-                <span className="token-comment"># Full triage: strips trackers, classifies intent, drafts counter-measures</span><br />
-                <span className="token-key">/sauver</span><br /><br />
-                <span className="token-comment"># Strip tracking pixels from a specific email</span><br />
-                <span className="token-key">/tracker-shield</span><br /><br />
-                <span className="token-comment"># Draft an Expert-Domain Trap for recruiter/sales slop</span><br />
-                <span className="token-key">/slop-detector</span><br /><br />
-                <span className="token-comment"># Due Diligence Loop for unsolicited investors</span><br />
-                <span className="token-key">/investor-trap</span><br /><br />
-                <span className="token-comment"># Time-Sink Trap for generic spam</span><br />
-                <span className="token-key">/bouncer-reply</span><br /><br />
-                <span className="token-comment"># Label and archive a specific thread on demand</span><br />
-                <span className="token-key">/archiver</span>
-              </div>
+              <p className="install-detail-link">No OAuth setup, no API keys, no manual configuration. <Link href="/docs#installation">See the full setup guide &rarr;</Link></p>
             </div>
           </div>
         </section>

@@ -1,10 +1,10 @@
-# 🛡️ SAULVER.ORG 
+# 🛡️ SAUVER.ORG 
 > **The Front Line of the Email Resistance.**
 
-This repository contains the source code for [sauver.org](https://sauver.org), the official landing page, waitlist, and early-access portal for the Saulver project.
+This repository contains the source code for [sauver.org](https://sauver.org), the official landing page, waitlist, and early-access portal for the Sauver project.
 
 ## 📡 THE MISSION
-Saulver is an open-source, agentic defense layer for your inbox. It uses **Model Context Protocol (MCP)** to identify and "sauté" AI-generated email slop before it ever reaches your attention.
+Sauver is an open-source, agentic defense layer for your inbox. It uses **Model Context Protocol (MCP)** to identify and "sauté" AI-generated email slop before it ever reaches your attention.
 
 ## 🏗️ SITE ARCHITECTURE
 This is a lightweight, high-performance web interface built to handle the "Early Adopter" influx.
@@ -44,7 +44,7 @@ npm run dev
 ```
 
 ## 🔗 PROJECT ECOSYSTEM
-Saulver is split into two distinct repositories to maintain a strict separation of concerns:
+Sauver is split into two distinct repositories to maintain a strict separation of concerns:
 
 sauver.org: (This Repo) The marketing site, documentation, and waitlist capture.
 
@@ -54,6 +54,6 @@ sauver: The core AI Engine, MCP Server, and Gmail integration logic. Go here to 
 We welcome PRs for UI improvements, accessibility audits, or documentation updates. For core feature requests regarding the AI bouncer, please head over to the Engine Repo.
 
 ---
-> Looking for the core AI engine? Visit the [Saulver Engine Repository](https://github.com/sauver-org/sauver).
+> Looking for the core AI engine? Visit the [Sauver Engine Repository](https://github.com/sauver-org/sauver).
 
 *Built by [Refract Systems](https://refractsystems.com).*

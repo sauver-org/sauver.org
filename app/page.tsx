@@ -280,11 +280,14 @@ export default function Home() {
               [ THE RESISTANCE IS ACTIVE ]
             </div>
             <h1 className="reveal" style={{ transitionDelay: '0.25s' }} ref={addToRefs}>
-              THEY WEAPONIZED AI.<br />
-              <span>WE WEAPONIZED IT BACK.</span>
+              TAKE BACK YOUR INBOX.<br />
+              <span>LET THE SPAMMERS WASTE THEIR TIME.</span>
             </h1>
-            <p className="reveal" style={{ transitionDelay: '0.4s' }} ref={addToRefs}>
-              Reclaim your attention with Sauver, the anti AI-slop movement. We neutralize surveillance metadata and deploy active traps to make automated spammers pay. Join the resistance and flip the script on automated predators. <strong>Built for the individual.</strong>
+            <p className="hero-desc reveal" style={{ transitionDelay: '0.4s' }} ref={addToRefs}>
+              AI made it effortless to flood your inbox with slop.<br className="desktop-br" />
+              We made it effortless to fight back.<br className="desktop-br" />
+              Stop the slop. Watch the spammers scream into the abyss.<br className="desktop-br" />
+              <strong>Join the resistance.</strong>
             </p>
             <div className="hero-btns reveal" style={{ transitionDelay: '0.55s' }} ref={addToRefs}>
               <Link href="#installation" className="btn btn-cta">Join The Resistance &rarr;</Link>

@@ -1,4 +1,4 @@
-# 🛡️ SAULVER.ORG 
+# 🛡️ SAUVER.ORG 
 > **The Front Line of the Email Resistance.**
 
 This repository contains the source code for [sauver.org](https://sauver.org), the official landing page, waitlist, and early-access portal for the Saulver project.

@@ -318,9 +318,9 @@ export default function Home() {
               <span>LET THE SPAMMERS WASTE THEIR TIME.</span>
             </h1>
             <p className="hero-desc reveal" style={{ transitionDelay: '0.4s' }} ref={addToRefs}>
-              AI made it effortless to flood your inbox with slop.<br className="desktop-br" />
-              We made it effortless to fight back.<br className="desktop-br" />
-              Stop the slop. Watch the spammers scream into the abyss.<br className="desktop-br" />
+              AI made it effortless to flood your inbox with slop. <br className="desktop-br" />
+              We made it effortless to fight back. <br className="desktop-br" />
+              Stop the slop. Watch the spammers scream into the abyss. <br />
               <strong>Join the resistance.</strong>
             </p>
             <div className="hero-btns reveal" style={{ transitionDelay: '0.55s' }} ref={addToRefs}>

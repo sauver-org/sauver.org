@@ -209,6 +209,7 @@ export default function Home() {
   const [statsStarted, setStatsStarted] = useState(false);
   const [stats, setStats] = useState({ trackers: 0, accuracy: 0, timeSaved: 0, slop: 0 });
   const [email, setEmail] = useState('');
+  const [honeyPot, setHoneyPot] = useState('');
   const [subscribeStatus, setSubscribeStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
@@ -272,6 +273,14 @@ export default function Home() {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Silent reject — bots auto-fill hidden fields, humans never see them
+    if (honeyPot) {
+      setSubscribeStatus('success');
+      setEmail('');
+      return;
+    }
+
     setSubscribeStatus('loading');
 
     try {
@@ -280,6 +289,7 @@ export default function Home() {
         email,
         subscribedAt: serverTimestamp(),
         source: 'homepage_install_section',
+        honeyPot: '',
       });
       setSubscribeStatus('success');
       setEmail('');
@@ -525,6 +535,17 @@ export default function Home() {
             </p>
 
             <form className="slop-free-form" onSubmit={handleSubscribe}>
+              {/* Honeypot — invisible to humans, bots auto-fill it */}
+              <input
+                type="text"
+                name="company_url"
+                value={honeyPot}
+                onChange={(e) => setHoneyPot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
+              />
               <div className="form-input-group">
                 <input
                   type="email"

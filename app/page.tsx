@@ -3,6 +3,8 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -206,6 +208,8 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState('');
   const [statsStarted, setStatsStarted] = useState(false);
   const [stats, setStats] = useState({ trackers: 0, accuracy: 0, timeSaved: 0, slop: 0 });
+  const [email, setEmail] = useState('');
+  const [subscribeStatus, setSubscribeStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
   const statsRef = useRef<HTMLElement | null>(null);
@@ -264,6 +268,26 @@ export default function Home() {
     if (key === 'timeSaved') return val >= 50 ? '50h+' : Math.floor(val) + 'h';
     if (key === 'slop') return val >= 95 ? '95%' : val.toFixed(1) + '%';
     return val.toString();
+  };
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubscribeStatus('loading');
+
+    try {
+      if (!db) throw new Error('Firestore not initialized');
+      await addDoc(collection(db, 'subscribers'), {
+        email,
+        subscribedAt: serverTimestamp(),
+        source: 'homepage_install_section',
+      });
+      setSubscribeStatus('success');
+      setEmail('');
+      setTimeout(() => setSubscribeStatus('idle'), 3000);
+    } catch (error) {
+      console.error('Error adding document: ', error);
+      setSubscribeStatus('error');
+    }
   };
 
   return (
@@ -487,6 +511,51 @@ export default function Home() {
               </div>
               <p className="install-detail-link">No OAuth setup, no API keys, no manual configuration. <Link href="/docs#installation">See the full setup guide &rarr;</Link></p>
             </div>
+          </div>
+        </section>
+
+        {/* ── Stay in the Loop (Email Capture) ────────────── */}
+        <section id="stay-in-the-loop" className="section-container">
+          <div className="newsletter-wrapper reveal" ref={addToRefs}>
+            <div className="section-label mono">[ SECURE COMMS CHANNEL ]</div>
+            <h2>THE BOTS WILL ADAPT.<br /><span>SO WILL WE.</span></h2>
+            <p className="newsletter-desc">
+              AI spammers are constantly changing their tactics. Drop your email below,
+              and we&apos;ll ping you only when there are major core updates or new filters added to the repository.
+            </p>
+
+            <form className="slop-free-form" onSubmit={handleSubscribe}>
+              <div className="form-input-group">
+                <input
+                  type="email"
+                  placeholder="Enter your email address..."
+                  required
+                  className="input-terminal"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={subscribeStatus === 'loading' || subscribeStatus === 'success'}
+                />
+                <button
+                  type="submit"
+                  className="btn btn-cta"
+                  disabled={subscribeStatus === 'loading' || subscribeStatus === 'success'}
+                >
+                  {subscribeStatus === 'loading' ? 'Encrypting...' :
+                    subscribeStatus === 'success' ? '\u2713 Secured' :
+                      'Get Core Updates \u2192'}
+                </button>
+              </div>
+
+              {subscribeStatus === 'error' && (
+                <p style={{ color: 'var(--status-danger)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+                  Connection failed. Try again.
+                </p>
+              )}
+
+              <p className="micro-copy mono">
+                We build tools to destroy spam. We aren&apos;t going to send you any. 100% slop-free.
+              </p>
+            </form>
           </div>
         </section>
 

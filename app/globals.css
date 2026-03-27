@@ -229,6 +229,10 @@ nav.scrolled {
   margin-bottom: 36px;
   line-height: 1.7;
 }
+.desktop-br { display: block; }
+@media (max-width: 768px) {
+  .desktop-br { display: none; }
+}
 .hero p strong { color: var(--text-primary); font-weight: 600; }
 
 .hero-btns { display: flex; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }

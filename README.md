@@ -19,7 +19,7 @@ This is a lightweight, high-performance web interface built to handle the "Early
 
 ### 1. Clone the Frontend
 ```bash
-git clone [https://github.com/sauver-org/sauver.org.git](https://github.com/sauver-org/sauver.org.git)
+git clone https://github.com/sauver-org/sauver.org.git
 cd sauver.org
 ```
 

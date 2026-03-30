@@ -1,4 +1,4 @@
-# 🛡️ SAUVER.ORG 
+# <img src="./public/sauver-shield-simple-color.svg" alt="Sauver Logo" width="32" height="32" valign="middle" /> SAUVER.ORG
 > **The Front Line of the Email Resistance.**
 
 This repository contains the source code for [sauver.org](https://sauver.org), the official landing page, waitlist, and early-access portal for the Sauver project.

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { getAnalyticsInstance } from "@/lib/firebase";
+import { getAnalyticsInstance } from "@/lib/client/firebase";
 import { logEvent, type Analytics } from "firebase/analytics";
 
 export function FirebaseAnalyticsWatcher() {

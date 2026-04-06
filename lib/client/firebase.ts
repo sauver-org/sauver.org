@@ -1,3 +1,8 @@
+// This file initializes the Firebase Client SDK.
+// The 'client-only' package ensures this file is never accidentally imported 
+// into a Server Component, which would cause SSR hydration issues or bundle bloat.
+import 'client-only';
+
 import { initializeApp, getApps, FirebaseApp } from "firebase/app";
 import { getAnalytics, isSupported, Analytics } from "firebase/analytics";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
